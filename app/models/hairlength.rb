@@ -1,0 +1,2 @@
+class Hairlength < ApplicationRecord
+end
