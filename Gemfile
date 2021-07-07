@@ -61,3 +61,13 @@ gem 'devise'
 # 日本語化
 gem 'rails-i18n', '~> 6.0'
 gem 'devise-i18n'
+
+# 時間帯表示
+gem "simple_calendar", "~> 2.0"
+
+# ヘアスタイル写真投稿
+gem 'mini_magick'
+gem 'image_processing', '~> 1.2'
+
+# アクティブハッシュ選択s
+gem 'active_hash'
