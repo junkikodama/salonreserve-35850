@@ -1,0 +1,28 @@
+<div class='main'>
+  <div class='hairstyle-contents'>
+    <h2 class='title'>ヘアスタイル一覧</h2>
+    <div class="subtitle" >
+      最近の流行り
+    </div>
+    <ul class='hairstyle-lists'>
+      <% @hairstyles.each do |hairstyle| %>
+      <li class='list'>
+        <%= link_to hairstyle_path(hairstyle.id) do %>
+        <div class='hairstyle-img-content'>
+          <%= image_tag hairstyle.image, class: "hairstyle-img" %>
+
+        </div>
+        <div class='hairstyle-info'>
+          <h3 class='hairstyle-hairstylename'>
+            <%= hairstyle.hairstylename %>
+          </h3>
+          <div class='hairstyle-detail'>
+            <%= hairstyle.detail %>
+          </div>
+        </div>
+        <% end %>
+      </li>
+      <% end %>
+    </ul>
+  </div>
+</div>

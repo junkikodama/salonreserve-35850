@@ -1,0 +1,21 @@
+<%= form_with model: @hairstyle, local: true do |f| %>
+ <div class="container">
+    <h1>ヘアスタイル編集</h1>
+    <label>ヘアスタイル名 <span class="badge badge-danger">必須</span></label>
+    <%= f.text_field :hairstylename, autofocus: true, class:"form-control", placeholder:"ヘアスタイル名" %>
+    <label>ヘアスタイルについて <span class="badge badge-danger">必須</span></label>
+    <%= f.text_area :detail, class:"form-control", placeholder:"ヘアスタイルについて" %>
+    <label>性別 <span class="badge badge-danger">必須</span></label>
+    <%= f.collection_select(:gender_id, Gender.all, :id, :name, {}, {class:"form-control"}) %>
+    <label>髪の長さ <span class="badge badge-danger">必須</span></label>
+    <%= f.collection_select(:hairlength_id, Hairlength.all, :id, :name, {}, {class:"form-control"}) %>
+    <label>髪の色 <span class="badge badge-danger">必須</span></label>
+    <%= f.collection_select(:haircolor_id, Haircolor.all, :id, :name, {}, {class:"form-control"}) %>
+      <div class="field">
+        <%= f.label :image, "ヘアスタイル写真" %> <span class="badge badge-danger">必須</span> <br>
+        <%= f.file_field :image, id:"hairstyle_image" ,class:"form-control" %>
+      </div>
+    <br>
+    <%= f.submit "編集を完了する" ,class:"btn btn-primary btn-block" %>
+  </div>
+<% end %>

@@ -1,0 +1,41 @@
+<div class="hairstyle-show">
+  <div class="hairstyle-box">
+    <h2 class="hairstylename">
+      <%= @hairstyle.hairstylename %>
+    </h2>
+    <div class="hairstyle-img-content">
+      <%= image_tag @hairstyle.image ,class:"hairstyle-box-img" %>
+    </div>
+    <hr>
+    <% if user_signed_in?%>
+      <% if current_user.id == @hairstyle.user_id %>
+        <%= link_to "編集", edit_hairstyle_path, method: :get, class: "btn btn-primary btn-block" %>
+        <p class="or-text">or</p>
+        <%= link_to "削除", hairstyle_path(@hairstyle.id), method: :delete, class:"btn btn-danger btn-block" %>
+      <% else %>
+        <%= link_to "予約画面に進む", reservations_path ,class:"btn btn-primary btn-block"%>
+      <% end %>
+    <% end %>
+    <hr>
+    <table class="detail-table">
+      <tbody>
+        <tr>
+          <th class="detail-hairstyle">ヘアスタイルについて</th>
+          <td class="detail-value"><%= @hairstyle.detail %></td>
+        </tr>
+        <tr>
+          <th class="detail-hairstyle">性別</th>
+          <td class="detail-value"><%= @hairstyle.gender.name %></td>
+        </tr>
+        <tr>
+          <th class="detail-hairstyle">髪の長さ</th>
+          <td class="detail-value"><%= @hairstyle.hairlength.name %></td>
+        </tr>
+        <tr>
+          <th class="detail-hairstyle">髪の色</th>
+          <td class="detail-value"><%= @hairstyle.haircolor.name %></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
