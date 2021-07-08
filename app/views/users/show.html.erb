@@ -1,13 +1,10 @@
 <div class="container">
   <div class="row">
     <div class="col-12 text-center title">
+      <br>
       <h1>マイページ</h1>
     </div>
     <div class="col-12 mt-3 text-center content">
-      <div>
-        <label><strong>名前：</strong></label>
-        <p style="display:inline;"><%= @user.name %></p>
-      </div>
       <div>
         <label><strong>メールアドレス：</strong></label>
         <p style="display:inline;"><%= @user.email %></p>
@@ -18,7 +15,6 @@
           <thead>
             <tr>
               <th scope="col">予約日</th>
-              <th></th>
             </tr>
           </thead>
           <tbody>
@@ -26,9 +22,6 @@
               <td>
                 <%= user_reservation.day %>
                 <%= user_reservation.time %>              
-              </td>
-              <td>
-                <%= link_to '削除', reservation_path(user_reservation.id), method: :delete, data: { confirm: "削除してよろしいですか？", commit: "削除する", cancel: "やめる", title: "ご確認ください" } %>
               </td>
             </tr>             
             <% end %>
@@ -41,11 +34,11 @@
         </table>
       </div>
       <div class="col-12 mt-3 text-center mx-auto">
-        <h3>来院履歴</h3>
+        <h3>ご利用履歴</h3>
         <table class="table">
           <thead>
             <tr>
-              <th scope="col">予約日</th>
+              <th scope="col12">予約日</th>
             </tr>
           </thead>
           <tbody>
@@ -59,7 +52,7 @@
             <% end %>
             <% if @visit_historys.blank? %>
               <tr>
-                <td>来院履歴はありません。</td>
+                <td>ご利用履歴はありません。</td>
               </tr>
             <% end %>
           </tbody>

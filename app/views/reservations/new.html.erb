@@ -17,7 +17,7 @@
 
       <label>メニュー <span class="badge badge-danger">必須</span></label>
       <%= form.collection_select(:menu_id, Menu.all, :id, :name, {}, {class:"form-control"}) %>
-
+      <br>
       <label>希望ヘアスタイルのオーダー <span class="badge badge-success">任意</span></label>
       <%= form.text_field :order, autofocus: true, class:"form-control", placeholder:"希望ヘアスタイルのオーダー" %>
 
@@ -31,11 +31,7 @@
         <%= form.submit value: '予約する', class: 'btn btn-primary btn-block' %>
       </div>
     <% end %>
-
- 
-    <div class="col-12 text-right">
-      <%= link_to '戻る', reservations_path %>
-    </div>
+    
     </div>
   </div>
 </div>
