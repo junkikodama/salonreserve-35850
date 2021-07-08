@@ -69,5 +69,8 @@ gem "simple_calendar", "~> 2.0"
 gem 'mini_magick'
 gem 'image_processing', '~> 1.2'
 
-# アクティブハッシュ選択s
+# アクティブハッシュ選択
 gem 'active_hash'
+
+# ログイン画面bootstrap
+gem 'devise-bootstrap-views', '~> 1.0'
