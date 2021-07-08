@@ -36,13 +36,14 @@
 				<% if user_signed_in? %>
 					<li class="active"><a href= "/"><strong>トップページ</strong><span>Top</span></a></li>
 					<li><a href="/reservations"><strong>美容室予約</strong><span>Reservation</span></a></li>
-					<li><a href="/hairstyles"><strong>ヘアスタイル</strong><span>Hairstyle</span></a></li>
+					<li><a href="/hairstyles"><strong>ヘアスタイル一覧</strong><span>Hairstylelist</span></a></li>
+					<li><a href="/hairstyles/new"><strong>ヘアスタイル投稿</strong><span>Hairstylepost</span></a></li>
 					<li><a href="#"><strong>マイページ</strong><span>Mypage</span></a></li>
 					<li><a href="/users/edit"><strong>アカウント編集</strong><span>Account</span></a></li>
 					<li class="last"><a href="/users/sign_out" data-method="delete"><strong>ログアウト</strong><span>Logout</span></a></li>
 				<% else %>
 					<li class="active"><a href= "/"><strong>トップページ</strong><span>Top</span></a></li>
-					<li><a href="/hairstyles"><strong>ヘアスタイル</strong><span>Hairstyle</span></a></li>
+					<li><a href="/hairstyles"><strong>ヘアスタイル一覧</strong><span>Hairstylelists</span></a></li>
 					<li class="last"><a href="/users/sign_in"><strong>ログイン</strong><span>Login</span></a></li>
 				<% end %>
 			</ul>   
