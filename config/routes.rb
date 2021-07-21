@@ -4,4 +4,8 @@ Rails.application.routes.draw do
   root 'homes#index'
   resources :reservations
   resources :hairstyles
+  
+  resources :items do
+    resources :purchases, only: [:index, :create]
+  end
 end
