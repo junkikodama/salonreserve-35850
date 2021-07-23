@@ -8,6 +8,9 @@ class ItemsController < ApplicationController
   def new
   end
 
+  def edit
+  ends
+
   def destroy
   end
 end
